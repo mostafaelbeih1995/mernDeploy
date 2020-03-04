@@ -8,15 +8,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
-if (process.env.NODE_ENV === 'production') {
-    app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-        // res.sendFile("Fuck Yall");
-    });
-}
-else {
-    res.send("Not in production");
-}
+// if (process.env.NODE_ENV === 'production') {
+//     app.get("*", (req, res) => {
+//         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+//         // res.sendFile("Fuck Yall");
+//     });
+// }
+// else {
+//     res.send("Not in production");
+// }
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  // res.sendFile("Fuck Yall");
+});
 
 const port = process.env.PORT || 5000;
 
