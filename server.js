@@ -20,7 +20,7 @@ app.use(cors());
 
 app.get("/", (req, res) => {
 //   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-  res.sendFile("Fuck Yall");
+  res.send("Fuck Yall");
 });
 
 const port = process.env.PORT || 5000;
