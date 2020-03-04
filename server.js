@@ -19,8 +19,8 @@ app.use(cors());
 // }
 if (process.env.NODE_ENV === 'production') {
     app.get("/", (req, res) => {
-      //   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-      res.send("Fuck Yall");
+        res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    //   res.send("Fuck Yall");
     });
 }
 
