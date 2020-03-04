@@ -17,11 +17,13 @@ app.use(cors());
 // else {
 //     res.send("Not in production");
 // }
+if (process.env.NODE_ENV === 'production') {
+    app.get("/", (req, res) => {
+      //   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+      res.send("Fuck Yall");
+    });
+}
 
-app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-  res.send("Fuck Yall");
-});
 
 const port = process.env.PORT || 5000;
 
