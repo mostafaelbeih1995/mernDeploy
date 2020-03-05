@@ -25,7 +25,7 @@ app.get("/api/test", (req, res) => {
     res.send("Test end point")
 });
 
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
