@@ -23,16 +23,13 @@ app.get("/api/test", (req, res) => {
 // });
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
     app.get("*", (req, res) => {
-        // res.send("In production mode");
-          app.get("*", (req, res) => {
-            res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-            // res.sendFile("Fuck Yall");
-          });
-        // res.sendFile(path.join(__dirname, "client/build", "index.html"));
+      res.send("In production mode");
+      // res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+      // res.sendFile("Fuck Yall");
+      // res.sendFile(path.join(__dirname, "client/build", "index.html"));
     });
-
+    // app.use(express.static('client/build'));
 }
 
 
